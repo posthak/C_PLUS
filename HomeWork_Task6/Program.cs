@@ -1,4 +1,5 @@
 ﻿
+
 Console.Write("Введите число, чтобы проверить четное оно или нет: ");
 int a = Convert.ToInt32(Console.ReadLine());
 int reminder;
@@ -12,5 +13,3 @@ else
 {
     Console.Write("Число является нечетным");
 }
-
-
