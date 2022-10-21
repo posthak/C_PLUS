@@ -1,20 +1,15 @@
-﻿//Вычисляем скольки значное сгенирированное число и определяем третью цифру через деление с остатком
-//Конечно можно сделать проще через строку, но моя цель была получить результат через решение с целочисленными переменными
+﻿//показать третью цифру или написать, что нет третьей цифры
 Console.Clear(); 
-int num = new Random().Next(1,10000000);
-int x = num;
-int y = 1;
-int index=0;
-
-while(x>0) 
-{
-    index++;    
-    x/=10;
-    y*=10;
-}
-
-if (index < 3) Console.Write($"{num} -> третьей цифры нет");
+int num = new Random().Next(-10000,10000);
+int tempNum = Math.Abs(num);
+if (tempNum < 100)
+    Console.Write($"{num} -> третьей цифры нет");
 else
 {
-    Console.Write($"{num} -> {num/(y/1000)%10}");    
-} 
+    while (tempNum > 999)
+    {
+        tempNum/=10;
+    }
+    int thirdDigit = tempNum % 10;
+    Console.Write($"{num} -> {thirdDigit}"); 
+}
