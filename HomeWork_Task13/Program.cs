@@ -1,4 +1,4 @@
-﻿//показать третью цифру или написать, что нет третьей цифры
+﻿//показать третью или написать нет третьей цифры
 Console.Clear(); 
 int num = new Random().Next(-10000,10000);
 int tempNum = Math.Abs(num);
@@ -8,8 +8,8 @@ else
 {
     while (tempNum > 999)
     {
-        tempNum/=10;
+tempNum/=10;
     }
-    int thirdDigit = tempNum % 10;
-    Console.Write($"{num} -> {thirdDigit}"); 
+int thirdDigit = tempNum % 10;
+Console.Write($"{num} -> {thirdDigit}"); 
 }
