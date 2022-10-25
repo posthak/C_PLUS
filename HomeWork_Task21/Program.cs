@@ -1,4 +1,6 @@
-﻿Console.Clear(); 
+﻿// Напишите программу, которая принимает на вход координаты двух точек и находит расстояние между ними в 3D пространстве.
+
+Console.Clear(); 
 
 int[] coordinateA = {0,0,0};
 int[] coordinateB = {0,0,0};
@@ -13,7 +15,11 @@ coordinateB[0] =  Convert.ToInt32(Console.ReadLine());
 coordinateB[1] =  Convert.ToInt32(Console.ReadLine());
 coordinateB[2] =  Convert.ToInt32(Console.ReadLine());
 
+findDistance(coordinateA,coordinateB);
+
+void findDistance(int[] coordinateA, int[] coordinateB) {
 double distance = Math.Round(Math.Sqrt(Math.Pow(coordinateB[0] - coordinateA[0],2) + 
     Math.Pow(coordinateB[1] - coordinateA[1],2) + Math.Pow(coordinateB[2] - coordinateA[2],2)),2);
 
 Console.WriteLine($"A({coordinateA[0]},{coordinateA[1]},{coordinateA[2]}); B({coordinateB[0]},{coordinateB[1]},{coordinateB[2]}) ->  {distance}");
+}

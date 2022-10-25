@@ -1,7 +1,11 @@
-﻿Console.Clear(); 
+﻿// Напишите программу, которая принимает на вход пятизначное число и проверяет, является ли оно палиндромом.
+Console.Clear(); 
 
 Console.Write("Введите 5-ти значную цифру: ");
 int num = Convert.ToInt32(Console.ReadLine());
+CheckPalindrome(num);
+
+void CheckPalindrome(int num) {
 int leftTwoDigits = num / 1000;
 int rightTwoDigits = num % 100;
 
@@ -12,3 +16,5 @@ else
 {
     Console.WriteLine($"{num} -> нет");
 }
+}
+
