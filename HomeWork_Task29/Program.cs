@@ -11,20 +11,19 @@ printArray(fillArray(Collection));
 
 int[] fillArray(int[] Collection)
 {
-    for (int count = 0; count <= 7; count++)
+    for (int count = 0; count <= ArrayLength - 1; count++)
     {
         Collection[count] = new Random().Next(1, 100);
     }
     return Collection;
 }
 
-
 void printArray(int[] Collection)
 {
     string result = "";
-    for (int count = 0; count <= 7; count++)
+    for (int count = 0; count <= ArrayLength - 1; count++)
     {
-        if (count < 7)
+        if (count < ArrayLength - 1)
             result += Collection[count] + ", ";
         else
         {
