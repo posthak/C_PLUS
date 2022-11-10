@@ -8,7 +8,7 @@ while (count <= N)
 {
     if (count > 2) s = s + ",";
     s = s + Convert.ToString(count);
-    count+=2;
+    count += 2;
 }
 Console.Write(N);
 Console.Write(" -> ");
