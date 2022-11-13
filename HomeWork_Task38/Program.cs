@@ -3,19 +3,19 @@
 
 Console.Clear();
 
-int ArrayLength = 5;
-double[] Collection = { 3.2, 7.8, 22.33, 2.65, 78.1 };
+int arrayLength = 5;
+double[] collection = { 3.2, 7.8, 22.33, 2.65, 78.1 };
 
-Console.WriteLine($"[{String.Join(", ", Collection)}] -> {FindDiffMinMax(Collection, ArrayLength)}");
+Console.WriteLine($"[{String.Join(", ", collection)}] -> {FindDiffMinMax(collection, arrayLength)}");
 
-double FindDiffMinMax(double[] Collection, int len)
+double FindDiffMinMax(double[] collection, int len)
 {
-    double min = Collection[0];
-    double max = Collection[0];
+    double min = collection[0];
+    double max = collection[0];
     for (int count = 0; count < len; count++)
     {
-        if (min > Collection[count]) min = Collection[count];
-        if (max < Collection[count]) max = Collection[count];
+        if (min > collection[count]) min = collection[count];
+        else if (max < collection[count]) max = collection[count];
     }
     return Math.Round(max - min, 2);
 }
