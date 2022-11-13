@@ -8,10 +8,10 @@ int[] collection = new int[arrayLength];
 int arrayMin = 99;
 int arrayMax = 1000;
 
-int[] col = fillArray(collection, arrayMax, arrayMin, arrayLength);
+int[] col = FillArray(collection, arrayMax, arrayMin, arrayLength);
 Console.WriteLine($"[{String.Join(", ", col)}] -> {QuantityEven(col, arrayLength)}");
 
-int[] fillArray(int[] collection, int max, int min, int len)
+int[] FillArray(int[] collection, int max, int min, int len)
 {
     for (int count = 0; count < len; count++)
     {
