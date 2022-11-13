@@ -3,29 +3,29 @@
 // [345, 897, 568, 234] -> 2
 Console.Clear();
 
-int ArrayLength = new Random().Next(4, 10);
-int[] Collection = new int[ArrayLength];
-int ArrayMin = 99;
-int ArrayMax = 1000;
+int arrayLength = new Random().Next(4, 10);
+int[] collection = new int[arrayLength];
+int arrayMin = 99;
+int arrayMax = 1000;
 
-int[] col = fillArray(Collection, ArrayMax, ArrayMin, ArrayLength);
-Console.WriteLine($"[{String.Join(", ", col)}] -> {QuantityEven(col, ArrayLength)}");
+int[] col = fillArray(collection, arrayMax, arrayMin, arrayLength);
+Console.WriteLine($"[{String.Join(", ", col)}] -> {QuantityEven(col, arrayLength)}");
 
-int[] fillArray(int[] Collection, int max, int min, int len)
+int[] fillArray(int[] collection, int max, int min, int len)
 {
     for (int count = 0; count < len; count++)
     {
-        Collection[count] = new Random().Next(min, max);
+        collection[count] = new Random().Next(min, max);
     }
-    return Collection;
+    return collection;
 }
 
-int QuantityEven(int[] Collection, int len)
+int QuantityEven(int[] collection, int len)
 {
     int quant = 0;
     for (int count = 0; count < len; count++)
     {
-        if (Collection[count] % 2 == 0) quant++;
+        if (collection[count] % 2 == 0) quant++;
     }
     return quant;
 }
