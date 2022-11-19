@@ -15,7 +15,7 @@ void FindCrossedLinesPoint(double pk1, double pk2, double pb1, double pb2)
         Console.WriteLine("Прямые параллельны");
     else
     {
-        x = Math.Round((pb2 - pb1) / (pk1 - pk2), 2);
+        x = (pb2 - pb1) / (pk1 - pk2);
         y = (pk1 * x) + pb1;
         Console.WriteLine($"b1 = {pb1},k1 = {pk1}, b2 = {pb2}, k2 = {pk2} -> ({x}; {y})");
     }
