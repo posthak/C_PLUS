@@ -11,8 +11,8 @@ int n = 4;
 int min = 1;
 int max = 10;
 
-int[,] baseCollection = new int[m, n];
-baseCollection = GetCollection(m, n, min, max);
+int[,] collection = new int[m, n];
+int[,] baseCollection = GetCollection(collection, min, max);
 PrintCollection(baseCollection);
 
 Console.Write("Введите позицию элемента в массиве: ");
@@ -20,26 +20,26 @@ int element = Convert.ToInt32(Console.ReadLine());
 
 IsAvailableElement(baseCollection, element);
 
-int[,] GetCollection(int m, int n, int mn, int mx)
+int[,] GetCollection(int[,] coll, int mn, int mx)
 {
-    for (int i = 0; i < m; i++)
+    for (int i = 0; i < coll.GetLength(0); i++)
     {
-        for (int j = 0; j < n; j++)
+        for (int j = 0; j < coll.GetLength(1); j++)
         {
-            baseCollection[i, j] = new Random().Next(mn, mx);
+            coll[i, j] = new Random().Next(mn, mx);
         }
     }
-    return baseCollection;
+    return coll;
 }
 
-void IsAvailableElement(int[,] col, int elem)
+void IsAvailableElement(int[,] coll, int elem)
 {
     Boolean available = false;
-    for (int i = 0; i < col.GetLength(0); i++)
+    for (int i = 0; i < coll.GetLength(0); i++)
     {
-        for (int j = 0; j < col.GetLength(1); j++)
+        for (int j = 0; j < coll.GetLength(1); j++)
         {
-            if (col[i, j] == elem)
+            if (coll[i, j] == elem)
             {
                 available = true;
             }
