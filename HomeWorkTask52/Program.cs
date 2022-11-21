@@ -36,7 +36,6 @@ double[] GetAvgByColumn(int[,] coll)
         for (int j = 0; j < coll.GetLength(0); j++)
         {
             result[i] += coll[j, i];
-
         }
         result[i] = Math.Round(result[i] / coll.GetLength(0), 2);
     }
