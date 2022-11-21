@@ -18,7 +18,11 @@ PrintCollection(baseCollection);
 Console.Write("Введите позицию элемента в массиве: ");
 int element = Convert.ToInt32(Console.ReadLine());
 
-IsAvailableElement(baseCollection, element);
+if (IsAvailableElement(baseCollection, element)) Console.WriteLine($"{element} -> {element}");
+else
+{
+    Console.WriteLine($"{element} -> Такого числа в массиве нет");
+}
 
 int[,] GetCollection(int[,] coll, int mn, int mx)
 {
@@ -32,24 +36,19 @@ int[,] GetCollection(int[,] coll, int mn, int mx)
     return coll;
 }
 
-void IsAvailableElement(int[,] coll, int elem)
+Boolean IsAvailableElement(int[,] coll, int elem)
 {
-    Boolean available = false;
     for (int i = 0; i < coll.GetLength(0); i++)
     {
         for (int j = 0; j < coll.GetLength(1); j++)
         {
             if (coll[i, j] == elem)
             {
-                available = true;
+                return true;
             }
         }
     }
-    if (available) Console.WriteLine($"{elem} -> {elem}");
-    else
-    {
-        Console.WriteLine($"{elem} -> Такого числа в массиве нет");
-    }
+    return false;
 }
 
 void PrintCollection(int[,] coll)
