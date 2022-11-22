@@ -6,24 +6,28 @@
 
 int m = 3;
 int n = 4;
-double min = 0;
-double max = 10;
+int min = 0;
+int max = 10;
 double[,] baseCollection = new double[m, n];
 
 PrintCollection(GetFilledCollection(baseCollection, max, min));
 
-double[,] GetFilledCollection(double[,] coll, double mx, double mn)
+double[,] GetFilledCollection(double[,] coll, int mx, int mn)
 {
+    Random rnd = new Random();
     for (int i = 0; i < coll.GetLength(0); i++)
     {
         for (int j = 0; j < coll.GetLength(1); j++)
         {
-            coll[i, j] = new Random().NextDouble() * (mx - mn);
+            // coll[i, j] = new Random().NextDouble() * (mx - mn);
+            coll[i, j] = rnd.NextDouble() + rnd.Next(mn, mx); // [min, max]
         }
     }
     return coll;
 }
 
+// Random rnd = new Random();
+// array[i, j] = rnd.NextDouble() + rnd.Next(min, max); // [min, max]
 void PrintCollection(double[,] coll)
 {
     for (int i = 0; i < coll.GetLength(0); i++)
