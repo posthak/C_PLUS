@@ -17,7 +17,7 @@ int[,] baseCollection = GetCollectionZero(collection, min, max);
 
 PrintCollection(baseCollection);
 Console.WriteLine("");
-CreateSpiralCollection(baseCollection, 0, 0, false, 0, true);
+CreateSpiralCollection(baseCollection, 0, 0, false, 1, true);
 
 PrintCollection(baseCollection);
 
