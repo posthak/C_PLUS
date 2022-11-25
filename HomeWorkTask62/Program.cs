@@ -6,20 +6,15 @@
 // 10 09 08 07
 
 Console.Clear();
-int r = 4;
-int c = 4;
-
-int min = 1;
-int max = 100;
+int r = 8;
+int c = 8;
 
 int[,] collection = new int[r, c];
-int[,] baseCollection = GetCollectionZero(collection, min, max);
-
-PrintCollection(baseCollection);
+PrintCollection(collection);
 Console.WriteLine("");
-CreateSpiralCollection(baseCollection, 0, 0, false, 1, true);
+CreateSpiralCollection(collection, 0, 0, false, 1, true);
 
-PrintCollection(baseCollection);
+PrintCollection(collection);
 
 void CreateSpiralCollection(int[,] col, int row, int column, Boolean st, int number, Boolean firstCycle)
 {
@@ -80,18 +75,6 @@ void CreateSpiralCollection(int[,] col, int row, int column, Boolean st, int num
         CreateSpiralCollection(col, row, column, false, number, false);
     }
 
-}
-
-int[,] GetCollectionZero(int[,] coll, int mn, int mx)
-{
-    for (int i = 0; i < coll.GetLength(0); i++)
-    {
-        for (int j = 0; j < coll.GetLength(1); j++)
-        {
-            coll[i, j] = 0;
-        }
-    }
-    return coll;
 }
 
 void PrintCollection(int[,] coll)
