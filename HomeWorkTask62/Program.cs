@@ -5,8 +5,8 @@
 // 11 16 15 06
 // 10 09 08 07
 Console.Clear();
-int r = 10;
-int c = 10;
+int r = 13;
+int c = 13;
 int[,] collection = new int[r, c];
 
 Console.WriteLine("");
@@ -69,7 +69,6 @@ void CreateSpiralCollection(int[,] col, int row, int column, Boolean st, int num
         CreateSpiralCollection(col, row, column, false, number, false);
     }
 }
-
 void PrintCollection(int[,] coll)
 {
     for (int i = 0; i < coll.GetLength(0); i++)
