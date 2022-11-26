@@ -5,8 +5,8 @@
 // 11 16 15 06
 // 10 09 08 07
 Console.Clear();
-int r = 8;
-int c = 8;
+int r = 4;
+int c = 4;
 int[,] collection = new int[r, c];
 
 Console.WriteLine("");
@@ -54,7 +54,7 @@ void CreateSpiralCollection(int[,] col, int row, int column, Boolean st, int num
     }
     // direction up
     i = row--;
-    while (i > 1 && col[row, column] == 0)
+    while (i >= 0 && col[row, column] == 0)
     {
         col[row, column] = number;
         if (firstCycle && row - 1 > 0) row--;
