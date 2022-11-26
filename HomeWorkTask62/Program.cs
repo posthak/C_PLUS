@@ -4,21 +4,17 @@
 // 12 13 14 05
 // 11 16 15 06
 // 10 09 08 07
-
 Console.Clear();
 int r = 8;
 int c = 8;
-
 int[,] collection = new int[r, c];
-PrintCollection(collection);
+
 Console.WriteLine("");
 CreateSpiralCollection(collection, 0, 0, false, 1, true);
-
 PrintCollection(collection);
 
 void CreateSpiralCollection(int[,] col, int row, int column, Boolean st, int number, Boolean firstCycle)
-{
-    //direction == right
+{   //direction == right
     int j;
     if (!firstCycle) j = column++;
     else
@@ -34,7 +30,6 @@ void CreateSpiralCollection(int[,] col, int row, int column, Boolean st, int num
         number++;
         st = true;
     }
-
     //direction down
     int i = row++;
     while (i < col.GetLength(0) && col[row, column] == 0)
@@ -46,7 +41,6 @@ void CreateSpiralCollection(int[,] col, int row, int column, Boolean st, int num
         number++;
         st = true;
     }
-
     // direction left
     j = column--;
     while (j >= 0 && col[row, column] == 0)
@@ -58,7 +52,7 @@ void CreateSpiralCollection(int[,] col, int row, int column, Boolean st, int num
         number++;
         st = true;
     }
-    // // direction up
+    // direction up
     i = row--;
     while (i > 1 && col[row, column] == 0)
     {
@@ -74,7 +68,6 @@ void CreateSpiralCollection(int[,] col, int row, int column, Boolean st, int num
     {
         CreateSpiralCollection(col, row, column, false, number, false);
     }
-
 }
 
 void PrintCollection(int[,] coll)
@@ -83,8 +76,7 @@ void PrintCollection(int[,] coll)
     {
         for (int j = 0; j < coll.GetLength(1); j++)
         {
-            String str = coll[i, j] < 10 ? "0" + Convert.ToString(coll[i, j]) : Convert.ToString(coll[i, j]);
-            Console.Write($"{str} ");
+            Console.Write($"{coll[i, j].ToString().PadLeft(3, '0')} ");
         }
         Console.WriteLine();
     }
