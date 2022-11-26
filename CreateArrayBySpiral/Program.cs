@@ -5,8 +5,8 @@
 // 11 16 15 06
 // 10 09 08 07
 Console.Clear();
-int r = 4;
-int c = 4;
+int r = 10;
+int c = 10;
 int[,] collection = new int[r, c];
 
 Console.WriteLine("");
@@ -15,51 +15,51 @@ PrintCollection(collection);
 
 void CreateSpiralCollection(int[,] col, int row, int column, Boolean st, int number, Boolean firstCycle)
 {   //direction == right
-    int j;
-    if (!firstCycle) j = column++;
+    int temp;
+    if (!firstCycle) temp = column++;
     else
     {
-        j = column;
+        temp = column;
     }
-    while (j < col.GetLength(1) && col[row, column] == 0)
+    while (temp < col.GetLength(1) && col[row, column] == 0)
     {
         col[row, column] = number;
         if (firstCycle && column + 1 < col.GetLength(1)) column++;
         else if (!firstCycle && col[row, column + 1] == 0) column++;
-        j++;
+        temp++;
         number++;
         st = true;
     }
     //direction down
-    int i = row++;
-    while (i < col.GetLength(0) && col[row, column] == 0)
+    temp = row++;
+    while (temp < col.GetLength(0) && col[row, column] == 0)
     {
         col[row, column] = number;
         if (firstCycle && row + 1 < col.GetLength(0)) row++;
         else if (!firstCycle && col[row + 1, column] == 0) row++;
-        i++;
+        temp++;
         number++;
         st = true;
     }
     // direction left
-    j = column--;
-    while (j >= 0 && col[row, column] == 0)
+    temp = column--;
+    while (temp >= 0 && col[row, column] == 0)
     {
         col[row, column] = number;
         if (firstCycle && column - 1 >= 0) column--;
         else if (!firstCycle && col[row, column - 1] == 0) column--;
-        j--;
+        temp--;
         number++;
         st = true;
     }
     // direction up
-    i = row--;
-    while (i >= 0 && col[row, column] == 0)
+    temp = row--;
+    while (temp >= 0 && col[row, column] == 0)
     {
         col[row, column] = number;
         if (firstCycle && row - 1 > 0) row--;
         else if (!firstCycle && col[row - 1, column] == 0) row--;
-        i--;
+        temp--;
         number++;
         st = true;
     }
