@@ -6,21 +6,24 @@
 // 26(1,0,1) 55(1,1,1)
 
 Console.Clear();
-int row = 2;
-int coll = 2;
-int layer = 2;
+int row = 4;
+int coll = 4;
+int layer = 4;
 
 int min = 10;
 int max = 100;
 
 int[,,] collection = new int[row, coll, layer];
-int[,,] baseCollection = Get3DCollection(collection, min, max);
-
-Print3DCollection(baseCollection);
+if (collection.Length > 90) Console.WriteLine($"Кол-во элементов многомерного массива {collection.Length}, введите не более: 90");
+else
+{
+    int[,,] baseCollection = Get3DCollection(collection, min, max);
+    Print3DCollection(baseCollection);
+}
 
 int[,,] Get3DCollection(int[,,] coll, int mn, int mx)
 {
-    int[] uniqNumberColl = GeUniqNumberCollection(coll.GetLength(0) * coll.GetLength(1) * coll.GetLength(2));
+    int[] uniqNumberColl = GeUniqNumberCollection(coll.Length);
     int count = 0;
     for (int i = 0; i < coll.GetLength(0); i++)
     {
