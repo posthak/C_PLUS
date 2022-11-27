@@ -8,7 +8,7 @@ Console.Clear();
 
 int n = 3;
 int m = 2;
-Console.Write(Akkerman(n, m));
+Console.Write($"m = {m}, n = {n} -> A(m,n) = {Akkerman(m, n)}");
 
 int Akkerman(int n, int m)
 {
